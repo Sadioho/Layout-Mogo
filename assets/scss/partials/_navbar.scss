@@ -1,0 +1,102 @@
+.navbar {
+    border: 0;
+    padding: 15px 0;
+    font-size: 13px;
+    background-color: $bg-map;
+    @include Responsive(MD) {
+        background-color: rgba(255, 255, 255, 0);
+    }
+    .container {
+        .navbar-header {
+            .logo {
+                img {
+                    width: 82%;
+                }
+            }
+        }
+        .navbar-collapse {
+            text-align: center;
+            .navbar-right {
+                margin: 0;
+            }
+            .navbar-nav {
+                .not-active {
+                    border-bottom: unset;
+                }
+                li {
+                    a {
+                        font-family: $font-text;
+                        font-size: 13px;
+                        color: white;
+                        &:hover {
+                            color: $bg-nav;
+                        }
+  
+                    }
+                    .dropdown {
+                        padding: 15px 0;
+                        border: 0;
+                        cursor: pointer;
+                        .dropdown-toggle {
+                            padding: 15px;
+                            background-color: unset !important;
+                            transition: all 0.5s;
+                            &:hover {
+                                color: $bg-nav;
+                            }
+                        }
+                        .dropdown-menu {
+                            background-color: unset !important;
+                            box-shadow: unset !important;
+                            border: none !important;
+                            padding: 0;
+                            position: absolute;
+                            width: 100%;
+                            @include Responsive(MD) {
+                                width: 400px;
+                            }
+                            @include Responsive(MD2) {
+                                position: unset ;
+                            }
+                            li {
+                                width: 100%;
+                                .navbar-form {
+                                    padding: 0 20px;
+                                    border: none;
+                                    @include Responsive(XL) {
+                                        padding: 0;
+                                    }
+                                    .form-group {
+                                        width: 100%;
+                                        input {
+                                            width: 100%;
+                                            padding: 10px 15px;
+                                            outline: none;
+                                            border-radius: 100px;
+                                            &::placeholder {
+                                                color: $bg-nav;
+                                            }
+                                        }
+                                        input[type="text"] {
+                                            background-color: rgb(0, 0, 0);
+                                            border: 1px solid $bg-nav;
+                                            color: $bg-nav;
+                                        }
+                                    }
+
+                                }
+                            }
+
+                        }
+
+                    }
+
+                  
+                }
+           
+            }
+       
+        }
+    }
+
+}

@@ -1,0 +1,29 @@
+.about-text {
+    text-align: center;
+    padding: 0 10px;
+    .sub-title {
+        font-family: $font-subtitle;
+        font-size: 24px;
+    }
+    .title {
+        font-family: $font-title;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .separator {
+        width: 60px;
+        height: 3px;
+        background-color: lightcoral;
+        margin: 40px auto;
+    }
+    .text {
+        font-family: $font-text;
+        font-size: 15px;
+        color: $color-text;
+        padding: 0 10px;
+        margin-bottom: 100px;
+        @include Responsive(XL){
+            padding: 0 100px;
+        }
+    }
+}

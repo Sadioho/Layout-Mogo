@@ -1,0 +1,16 @@
+.counter{
+    margin-top: 100px;
+    background-color:$bg-blog; 
+    .container{
+        .row{
+            margin: 0;
+            padding: 0;
+            .border-right{
+                @include Responsive(MD){
+                    border-right: 1px solid $border;
+
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.work {
+    padding-top: 100px;
+    .container-fluide {
+        .row {
+            margin: 0;
+            .main-work {
+                .row {
+                    div { 
+                        margin: 0; 
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}

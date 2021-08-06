@@ -1,0 +1,63 @@
+.image-border {
+    background-color: $bg-blog;
+    z-index: 1;
+    margin-top: 30px;
+    position: relative;
+
+    .main-image {
+        z-index: 2;
+        transition: 0.5s cubic-bezier(0.5, 0.03, 0.41, 1);
+
+        img {
+            width: 100%;
+        }
+
+        .overlay-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            transition: 0.5s cubic-bezier(0.5, 0.03, 0.41, 1);
+            opacity: 0;
+            text-align: center;
+            background-image:  linear-gradient(rgba(243, 129, 129, .9), rgba(252, 227, 138, .9));
+            top: 0;
+            left: 0;
+
+            a {
+               
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 18px;
+                color: white;
+                font-weight: bold;
+                font-family: $font-title;
+                transition: all 0.5s;
+
+                i {
+                    font-size: 25px;
+                }
+
+                &:hover {
+                    color: $bg-nav;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &:hover>.main-image {
+        .overlay-img {
+            opacity: 1;
+        }
+
+        transform: translate(-10px, -10px);
+        transition: 0.5s cubic-bezier(0.5, 0.03, 0.41, 1);
+    }
+
+
+
+}
+

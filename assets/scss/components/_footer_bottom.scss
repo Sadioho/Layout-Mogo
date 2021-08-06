@@ -1,0 +1,27 @@
+.footer-bottom {
+
+
+    .container {
+        margin-top: 20px;
+        border-top: 1px solid #e5e5e5;
+        padding: 25px;
+        text-align: center;
+    }
+
+    p {
+        margin: 0;
+        font-family: $font-title;
+        font-weight: 600;
+        font-size: 14px;
+
+        span {
+            a {
+                color: $bg-map;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+.navbar-default {
+    background-color: unset !important;
+    border: none !important;
+
+    @include Responsive(MD2) {
+        background-color: $bg-map !important;
+    }
+}
+.navbar-toggle:hover{
+    background-color: $icon-color !important;
+}
+.active{
+    a{
+        border-bottom: 2px solid $bg-nav !important;
+        background-color: unset !important;
+    }
+}
+// MD2:992 max-width
+// Responsive 992px
+.navbar {
+    
+    .container {
+
+        @include Responsive(MD2) {
+            .navbar-text {
+                float: none;
+            }
+
+            .navbar-header {
+                float: none;
+
+                .navbar-toggle {
+                    display: block;
+                }
+
+            }
+
+            .navbar-collapse {
+                overflow: unset !important;
+               
+                .navbar-nav {
+                    float: none !important;
+
+                    li {
+                        float: none;
+
+                        a {
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                        }
+
+                        .dropdown {
+                            .dropdown-menu {
+                                position: unset;
+                            }
+                        }
+
+                    }
+                }
+
+            }
+
+            .collapsing {
+                overflow: hidden !important;
+            }
+
+            .collapse {
+
+                display: none !important;
+
+            }
+
+            .in {
+
+                display: block !important;
+
+            }
+
+        }
+
+    }
+}

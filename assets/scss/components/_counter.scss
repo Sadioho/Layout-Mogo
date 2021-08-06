@@ -1,0 +1,25 @@
+.col-20 {
+    text-align: center;
+    display: inline-block;
+    padding: 20px 0;
+    width: 100%;
+    color: white;
+
+    span {
+        font-size: 72px;
+        font-family: $font-title;
+        font-weight: bold;
+    }
+
+    @include Responsive(MD) {
+        width: 19.6%;
+        border-left: 1px solid $border;
+    }
+
+    p {
+        font-family: $font-text;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+}

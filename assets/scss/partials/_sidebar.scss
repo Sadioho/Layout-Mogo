@@ -1,0 +1,249 @@
+/* Section-1 Styles */
+#section-1 {
+    height: 600px;
+
+    @include Responsive(XS) {
+        height: 700px;
+    }
+
+    @include Responsive(MD) {
+        height: 900px;
+    }
+
+    .content-slider {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        input {
+            display: none;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            .banner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                z-index: 0;
+                width: inherit;
+                height: inherit;
+                text-align: center;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                transition: all .5s ease;
+
+                .banner-inner-wrapper {
+                    height: 100%;
+                    padding-top: 96px;
+                    background-image: linear-gradient(rgba(243, 129, 129, .9), rgba(252, 227, 138, .9));
+                    box-sizing: border-box;
+
+                    h2 {
+
+                        padding-bottom: 5px;
+                        font-family: $font-subtitle;
+                        font-weight: 400;
+                        text-transform: none;
+                        color: white;
+
+                        @include Responsive(XS) {
+
+                            font-size: 60px;
+                        }
+
+                        @include Responsive(MD) {
+                            padding-top: 100px;
+                            font-size: 72px;
+                        }
+
+                    }
+
+                    h1 {
+
+                        font-size: 50px;
+                        line-height: 95%;
+                        font-family: $font-title;
+                        font-weight: 700;
+                        color: white;
+
+                        @include Responsive(XS) {
+                            font-size: 100px;
+                        }
+
+                        @include Responsive(MD) {
+                            font-size: 150px;
+                        }
+                    }
+
+                    .line {
+                        display: block;
+                        width: 64px;
+                        height: 3px;
+                        margin: 40px auto;
+                        background: white;
+                    }
+
+                    .learn-more-button {
+                        padding-bottom: 80px;
+                        z-index: 15 !important;
+
+                        a {
+                            padding: 8px 32px;
+                            text-align: center;
+                            font-family: $font-title;
+                            font-size: 14px;
+                            font-weight: bold;
+                            color: white;
+                            text-transform: uppercase;
+                            border: 3px solid white ;
+
+                            &:hover {
+                                color: #e88382;
+                                border-color: #e88382;
+                                transition: all 0.5s;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #top-banner-1 {
+                background: url('https://checkboxes-demo.webdevs.co.ua/images/mogo/banner-1.png') no-repeat center center;
+                background-size: cover;
+            }
+
+            #top-banner-2 {
+                background: url('https://checkboxes-demo.webdevs.co.ua/images/mogo/banner-2.png') no-repeat center center;
+                background-size: cover;
+            }
+
+            #top-banner-3 {
+                background: url('https://checkboxes-demo.webdevs.co.ua/images/mogo/banner-3.png') no-repeat center center;
+                background-size: cover;
+            }
+
+            #top-banner-4 {
+                background: url('https://checkboxes-demo.webdevs.co.ua/images/mogo/banner-4.png') no-repeat center center;
+                background-size: cover;
+            }
+        }
+
+        nav {
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            z-index: 10;
+            text-align: center;
+
+            .controls {
+                display: block;
+                width: 70%;
+                margin: 0 auto;
+                font-family: $font-title;
+
+                label {
+                    position: relative;
+                    display: inline-block;
+                    width: 30%;
+                    height: 50px;
+                    overflow: hidden;
+                    margin: 0 16px;
+                    padding-top: 16px;
+                    text-align: left;
+                    text-transform: uppercase;
+                    font-family: $font-title;
+                    font-size: 16px;
+                    color: #f6eac5;
+                    font-weight: 500;
+                    cursor: pointer;
+
+                    @include Responsive(SM) {
+                        width: 30%;
+                    }
+
+                    @include Responsive(MD) {
+                        width: 20%;
+                    }
+
+                    transition: all 0.5s;
+
+                    .progressbar {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 3px;
+                        width: 100%;
+                        background: #f6eac5;
+                        z-index: 100;
+
+                        .progressbar-fill {
+                            position: inherit;
+                            width: inherit;
+                            height: inherit;
+                            margin-left: -100%;
+                            background: #e88382;
+                        }
+                    }
+
+                    span {
+                        font-size: 22px;
+                        font-weight: 700;
+                    }
+
+                    &:hover {
+                        color: #e88382;
+                    }
+                }
+            }
+        }
+
+        #banner1:checked~.slider #top-banner-1,
+        #banner2:checked~.slider #top-banner-2,
+        #banner3:checked~.slider #top-banner-3,
+        #banner4:checked~.slider #top-banner-4 {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        #banner1:checked~nav label:nth-of-type(1),
+        #banner2:checked~nav label:nth-of-type(2),
+        #banner3:checked~nav label:nth-of-type(3),
+        #banner4:checked~nav label:nth-of-type(4) {
+            cursor: default;
+            color: rgb(255, 255, 255);
+            transition: all 0.5s;
+        }
+
+        #banner1:checked~nav label:nth-of-type(1) .progressbar,
+        #banner2:checked~nav label:nth-of-type(2) .progressbar,
+        #banner3:checked~nav label:nth-of-type(3) .progressbar,
+        #banner4:checked~nav label:nth-of-type(4) .progressbar {
+            background: white ;
+        }
+
+        #banner1:checked~nav label:nth-of-type(1) .progressbar-fill,
+        #banner2:checked~nav label:nth-of-type(2) .progressbar-fill,
+        #banner3:checked~nav label:nth-of-type(3) .progressbar-fill,
+        #banner4:checked~nav label:nth-of-type(4) .progressbar-fill {
+            animation: progressBarFill 5s linear;
+        }
+    }
+}
+
+/* Animations */
+@keyframes progressBarFill {
+    from {
+        margin-left: -100%;
+    }
+
+    to {
+        margin-left: 0;
+    }
+}
